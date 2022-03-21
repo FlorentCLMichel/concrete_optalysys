@@ -25,7 +25,7 @@ use crate::backends::optalysys::private::crypto::bootstrap::fourier::buffers::Ff
 use crate::backends::optalysys::private::crypto::bootstrap::fourier::buffers::FourierBskBuffers;
 use crate::backends::core::private::math::fft::{Complex64, FourierPolynomial};
 
-mod buffers;
+pub(crate) mod buffers;
 #[cfg(test)]
 mod tests;
 
