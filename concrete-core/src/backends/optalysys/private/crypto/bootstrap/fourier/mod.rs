@@ -1,6 +1,7 @@
 use std::fmt::Debug;
 
 use concrete_fftw::array::AlignedVec;
+#[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
 use concrete_commons::numeric::{CastInto, Numeric};
