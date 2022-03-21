@@ -29,7 +29,7 @@ mod buffers;
 mod tests;
 
 /// A bootstrapping key in the fourier domain.
-#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone, PartialEq)]
 pub struct FourierBootstrapKey<Cont, Scalar>
 where
@@ -719,7 +719,7 @@ where
     }
 }
 
-oub(crate) fn constant_sample_extract<LweCont, RlweCont, Scalar>(
+pub(crate) fn constant_sample_extract<LweCont, RlweCont, Scalar>(
     lwe: &mut LweCiphertext<LweCont>,
     glwe: &GlweCiphertext<RlweCont>,
 ) where
