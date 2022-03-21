@@ -24,12 +24,13 @@ use crate::backends::optalysys::private::crypto::bootstrap::fourier::buffers::Ff
 use crate::backends::optalysys::private::crypto::bootstrap::fourier::buffers::FourierBskBuffers;
 use crate::backends::core::private::math::fft::{Complex64, FourierPolynomial};
 
-pub(crate) mod buffers;
+mod buffers;
 #[cfg(test)]
 mod tests;
 
 /// A bootstrapping key in the fourier domain.
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))
+#[derive(Debug, Clone, PartialEq)]
 pub struct FourierBootstrapKey<Cont, Scalar>
 where
     Scalar: UnsignedTorus,
@@ -718,7 +719,7 @@ where
     }
 }
 
-fn constant_sample_extract<LweCont, RlweCont, Scalar>(
+oub(crate) fn constant_sample_extract<LweCont, RlweCont, Scalar>(
     lwe: &mut LweCiphertext<LweCont>,
     glwe: &GlweCiphertext<RlweCont>,
 ) where
