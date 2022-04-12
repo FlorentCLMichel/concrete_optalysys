@@ -1,3 +1,4 @@
+#![deny(rustdoc::broken_intra_doc_links)]
 //! Welcome the the `concrete-boolean` documentation!
 //!
 //! # Description
@@ -61,7 +62,7 @@ pub(crate) const PLAINTEXT_FALSE: u32 = 7 << (32 - PLAINTEXT_LOG_SCALING_FACTOR)
 #[cfg(test)]
 pub(crate) fn random_boolean() -> bool {
     // create a random generator
-    let mut generator = concrete_core::math::random::RandomGenerator::new(None);
+    let mut generator = concrete_core::backends::core::private::math::random::RandomGenerator::new(None);
 
     // generate a bit
     let n: u32 = generator.random_uniform_binary();
@@ -74,7 +75,7 @@ pub(crate) fn random_boolean() -> bool {
 #[cfg(test)]
 pub(crate) fn random_integer() -> u32 {
     // create a random generator
-    let mut generator = concrete_core::math::random::RandomGenerator::new(None);
+    let mut generator = concrete_core::backends::core::private::math::random::RandomGenerator::new(None);
 
     // generate a bit
     generator.random_uniform()
